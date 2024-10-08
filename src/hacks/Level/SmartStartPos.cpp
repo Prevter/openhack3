@@ -1,6 +1,7 @@
 #include <modules/gui/gui.hpp>
 #include <modules/hack/hack.hpp>
 #include <modules/config/config.hpp>
+#include <modules/debug/trace.hpp>
 
 #include <Geode/modify/PlayLayer.hpp>
 
@@ -44,14 +45,20 @@ namespace eclipse::hacks::Level {
         }
 
         void setupStartPos(StartPosObject* startPos) {
-            geode::log::debug("Inside setupStartPos");
+            TRACE_FUNCTION();
 
             LevelSettingsObject* startPosSettings = startPos->m_startSettings;
             LevelSettingsObject* levelSettings = PlayLayer::get()->m_levelSettings;
             
-            geode::log::debug("level settings: {}", levelSettings);
+            geode::log::debug("startPosSettings: {}", startPosSettings);
+            if (!startPosSettings) {
+                geode::log::warn("startPosSettings not found");
+                return;
+            }
+
+            geode::log::debug("levelSettings: {}", levelSettings);
             if (!levelSettings) {
-                geode::log::warn("level settings not found");
+                geode::log::warn("levelSettings not found");
                 return;
             }
 
@@ -136,8 +143,11 @@ namespace eclipse::hacks::Level {
 
         void resetLevel() {
             if (config::get<bool>("level.smartstartpos", false)) {
-                for (StartPosObject* obj : m_fields->m_startPositions)
+                TRACE_SCOPE("resetLevel() 'smart startpos'");
+                for (StartPosObject* obj : m_fields->m_startPositions) {
+                    TRACE_SCOPE("m_startPositions iteration");
                     setupStartPos(obj);
+                }
             }
 
             PlayLayer::resetLevel();
