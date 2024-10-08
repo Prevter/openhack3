@@ -47,6 +47,7 @@ namespace eclipse::hacks::Level {
         void setupStartPos(StartPosObject* startPos) {
             TRACE_FUNCTION();
 
+            geode::log::debug("startpos: {}", startPos);
             LevelSettingsObject* startPosSettings = startPos->m_startSettings;
             LevelSettingsObject* levelSettings = PlayLayer::get()->m_levelSettings;
             
