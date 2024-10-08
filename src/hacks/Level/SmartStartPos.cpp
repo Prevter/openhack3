@@ -44,8 +44,16 @@ namespace eclipse::hacks::Level {
         }
 
         void setupStartPos(StartPosObject* startPos) {
+            geode::log::debug("Inside setupStartPos");
+
             LevelSettingsObject* startPosSettings = startPos->m_startSettings;
             LevelSettingsObject* levelSettings = PlayLayer::get()->m_levelSettings;
+            
+            geode::log::debug("level settings: {}", levelSettings);
+            if (!levelSettings) {
+                geode::log::warn("level settings not found");
+                return;
+            }
 
             startPosSettings->m_startDual = levelSettings->m_startDual;
             startPosSettings->m_startMode = levelSettings->m_startMode;
