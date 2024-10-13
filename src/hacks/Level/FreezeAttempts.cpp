@@ -30,6 +30,7 @@ namespace eclipse::hacks::Level {
         }
 
         bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             auto* GSM = GameStatsManager::sharedState();
 
             m_fields->totalAttempts = GSM->getStat("2");

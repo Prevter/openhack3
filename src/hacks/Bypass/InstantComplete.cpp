@@ -23,6 +23,7 @@ namespace eclipse::hacks::Bypass {
         ADD_HOOKS_DELEGATE("bypass.instantcomplete")
 
         bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             if (!PlayLayer::init(level, useReplay, dontCreateObjects)) return false;
 
             if (this->m_isPlatformer)

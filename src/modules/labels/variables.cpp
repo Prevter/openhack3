@@ -1,5 +1,6 @@
 #include "variables.hpp"
 #include <modules/config/config.hpp>
+#include <modules/debug/trace.hpp>
 #include <utils.hpp>
 
 #include <Geode/binding/LevelEditorLayer.hpp>
@@ -9,7 +10,6 @@
 #include <Geode/binding/PlayLayer.hpp>
 #include <Geode/loader/Mod.hpp>
 #include <Geode/Loader.hpp>
-#include <Geode/modify/PlayLayer.hpp>
 
 #include <Geode/modify/PlayLayer.hpp>
 
@@ -310,6 +310,7 @@ namespace eclipse::labels {
         };
 
         bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             if (!PlayLayer::init(level, useReplay, dontCreateObjects)) return false;
 
             auto& manager = VariableManager::get();

@@ -92,6 +92,7 @@ namespace eclipse::hacks::Level {
 
     class $modify(HitboxMultiplierPLHook, PlayLayer) {
         bool init(GJGameLevel* level, bool unk, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             reset();
             return PlayLayer::init(level, unk, dontCreateObjects);
         }

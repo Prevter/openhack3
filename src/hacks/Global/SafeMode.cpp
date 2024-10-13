@@ -71,6 +71,7 @@ namespace eclipse::hacks::Global {
         ENABLE_SAFE_HOOKS_ALL()
 
         bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             auto* GSM = GameStatsManager::sharedState();
 
             m_fields->totalJumps = GSM->getStat("1");

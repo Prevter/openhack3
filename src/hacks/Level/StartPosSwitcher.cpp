@@ -208,6 +208,7 @@ namespace eclipse::hacks::Level {
 
     class $modify(StartPosSwitcherPLHook, PlayLayer) {
         bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+            TRACE_FUNCTION();
             startPosObjects.clear();
 
             return PlayLayer::init(level, useReplay, dontCreateObjects);

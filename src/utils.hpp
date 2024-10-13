@@ -2,6 +2,7 @@
 
 #include <random>
 #include <modules/gui/color.hpp>
+#include <modules/debug/trace.hpp>
 #include <Geode/binding/GJBaseGameLayer.hpp>
 
 namespace eclipse::utils {

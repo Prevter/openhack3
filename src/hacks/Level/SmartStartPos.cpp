@@ -117,6 +117,7 @@ namespace eclipse::hacks::Level {
         }
 
         bool init(GJGameLevel* level, bool unk1, bool unk2) {
+            TRACE_FUNCTION();
             auto fields = m_fields.self();
             fields->m_dualPortals.clear();
             fields->m_gamemodePortals.clear();

@@ -49,7 +49,8 @@
         {
             "id": "eclipse.ffmpeg-api",
             "version": ">=1.0.0",
-            "importance": "required"
+            "importance": "required",
+			"platforms": [ "win" ]
         }
 	],
 	"settings": {
