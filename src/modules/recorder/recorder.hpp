@@ -1,5 +1,6 @@
 #pragma once
 #include <Geode/platform/platform.hpp>
+#ifdef GEODE_IS_WINDOWS
 #include <eclipse.ffmpeg-api/include/render_settings.hpp>
 
 #ifndef GEODE_IS_ANDROID
@@ -39,4 +40,5 @@ namespace eclipse::recorder {
         RenderTexture m_renderTexture;
     };
 };
+#endif
 #endif

@@ -1,5 +1,5 @@
 #include "recorder.hpp"
-
+#ifdef GEODE_IS_WINDOWS
 #include <eclipse.ffmpeg-api/include/recorder.hpp>
 #include <eclipse.ffmpeg-api/include/audio_mixer.hpp>
 #include <Geode/binding/FMODAudioEngine.hpp>
@@ -79,3 +79,4 @@ namespace eclipse::recorder {
         return ffmpegRecorder.getAvailableCodecs();
     }
 }
+#endif
