@@ -1,3 +1,4 @@
+#if 0
 #pragma once
 #include <Geode/platform/platform.hpp>
 #include <eclipse.ffmpeg-api/include/render_settings.hpp>
@@ -39,3 +40,4 @@ namespace eclipse::recorder {
         RenderTexture m_renderTexture;
     };
 };
+#endif
