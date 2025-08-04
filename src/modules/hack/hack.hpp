@@ -176,3 +176,8 @@ namespace eclipse::hack {
 
     #define $hack(name) dummy_##name##_hack; struct ECLIPSE_DLL name : eclipse::hack::Hack
 }
+
+#undef GEODE_MODIFY_DECLARE
+#define GEODE_MODIFY_DECLARE(base, derived) \
+    derived##Dummy; \
+    struct __declspec(novtable) derived : geode::Modify<derived, base>
